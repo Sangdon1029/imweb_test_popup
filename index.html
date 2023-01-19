@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="checkClosedChildPopupAndReload()">
+        parent
+    </button>
+<div class="tw-w-[100%] tw-h-[100%] tw-flex tw-justify-between tw-flex-col">
+    <div id="app"></div>
+    <div id="site_value_container" class="tw-hidden">
+        <input id="site_code" class="tw-hidden" value=""></input>
+        <input id="access_location" class="tw-hidden" value=""></input>
+    </div>
+</div>
+<script>
+    const checkClosedChildPopupAndReload = () =>{
+        const width = 330;
+        const height = 330;
+        const top = Math.ceil(( window.screen.height - height )/2);
+        const left = Math.ceil(( window.screen.width - width )/2);
+        const options = 'top='+ top +', left='+ left +', width='+ width +', height='+ height +', status=no, menubar=no, toolbar=no, resizable=no, ';
+        let child_popup = window.open('./popup_child.html','popup',options);
+    } 
+
+</script>
+
+  </body>
+</html>
